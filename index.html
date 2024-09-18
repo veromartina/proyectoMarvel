@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ada Comics</title>
+  <link rel="shortcut icon" href="./asset/logo5.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          textShadow: {
+            'custom': '0 0 20px #f25fc1, 0 0 50px #f2efee',
+          },
+        },
+      },
+      plugins: [
+        require('tailwindcss-textshadow')
+      ],
+    }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          height: {
+            alturaHero: "450px",
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <header class="h-alturaHero">
+    <div class="tituloHero h-12 flex justify-center w-full max-w-7xl px-2 box-border bg-black">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bold text-bg-clip text-shadow-custom">ADA
+        COMICS</h1>
+
+    </div>
+
+    <div class="ImgHero flex flex-wrap w-full h-[400px]">
+      <img src="./asset/img1.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img2.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img3.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img4.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img5 (2).jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img6.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img7.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+      <img src="./asset/img8.jpg" alt="imagen"
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="bg-white shadow sm:rounded-lg p-6">
+      <div class="search mb-6">
+        <h2 id="tituloH2" class="text-xl font-semibold text-gray-700">Búsqueda</h2>
+        <div class="contenedor mt-4">
+          <div class="input-contenedor flex items-center border rounded-md shadow-sm">
+            <input type="text" id="contenedor-input" class="conte-input flex-grow p-2 border-none focus:ring-0"
+              placeholder="Ingresá tu búsqueda" aria-labelledby="search-title" />
+            <i class="fas fa-search p-2 text-gray-400" aria-hidden="true"></i>
+          </div>
+          <div class="buscar-contenedor-interno mt-4">
+            <div class="cont-clasificador grid grid-cols-2 gap-4">
+              <div>
+                <label for="tipo-busqueda" class="block text-sm font-medium text-gray-700">TIPO</label>
+                <select name="tipo-busqueda" id="tipo-busqueda"
+                  class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                  <option value="comics">COMICS</option>
+                  <option value="characters">PERSONAJES</option>
+                </select>
+              </div>
+              <div>
+                <label for="orden-busqueda" class="block text-sm font-medium text-gray-700">ORDEN</label>
+                <select name="orden-busqueda" id="orden-busqueda"
+                  class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                  <option value="name" class="character-option">A-Z</option>
+                  <option value="-name" class="character-option">Z-A</option>
+                  <option value="title" class="comic-option">A-Z</option>
+                  <option value="-title" class="comic-option">Z-A</option>
+                  <option value="-onsaleDate" class="comic-option">Más nuevos</option>
+                  <option value="onsaleDate" class="comic-option">Más viejos</option>
+                </select>
+              </div>
+            </div>
+            <button type="button"
+              class="search-button mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600">BUSCAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <section class="seccion-comics hidden">
+          <img src="" alt="" class="portada-comic w-full h-auto rounded-lg shadow-md" />
+          <div class="detalles-comics mt-4">
+            <h2 class="titulo-comics text-2xl font-bold text-gray-900"></h2>
+            <h3 class="mt-2 text-lg font-semibold text-gray-700">Publicado:</h3>
+            <p class="publicado-comics text-gray-600"></p>
+            <h3 class="mt-2 text-lg font-semibold text-gray-700">Guionistas:</h3>
+            <p class="escritor-comics text-gray-600"></p>
+            <h3 class="mt-2 text-lg font-semibold text-gray-700">Descripción:</h3>
+            <p class="comic-descripcion text-gray-600"></p>
+          </div>
+        </section>
+
+        <section class="seccion-personajes hidden">
+          <img src="" alt="" class="imagen-personajes w-full h-auto rounded-lg shadow-md" />
+          <div class="detalles-personajes mt-4">
+            <h2 class="nombre-personajes text-2xl font-bold text-gray-900"></h2>
+            <p class="descripcion-personajes text-gray-600"></p>
+          </div>
+        </section>
+
+        <section class="seccion-resultados mt-8">
+          <h2 class="titulo-resultados text-xl font-semibold text-gray-700">Resultados</h2>
+          <p class="recuento-resultados mt-2 text-gray-600">
+            <span class="numero-resultados font-bold">0</span> RESULTADOS
+          </p>
+          <div class="resultados grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"></div>
+          <div class="paginacion mt-6 flex justify-between">
+            <button type="button"
+              class="primera-pagina boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+              aria-label="Página previa">
+              <i class="fas fa-angle-double-left" aria-hidden="true"></i>
+            </button>
+            <button type="button"
+              class="pagina-anterior boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+              aria-label="Página Anterior">
+              <i class="fas fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button type="button"
+              class="pagina-siguiente boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+              aria-label="Siguiente Página">
+              <i class="fas fa-angle-right" aria-hidden="true"></i>
+            </button>
+            <button type="button"
+              class="ultima-pagina boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+              aria-label="Última página">
+              <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </section>
+        <div class="contenedor-cagador hidden mt-6 flex justify-center">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./main.js"></script>
+  <footer class="bg-white shadow mt-6">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-gray-700">Realizado con ❤️ por Veronica S. Martina</div>
+    </div>
+  </footer>
+</body>
+
+</html>

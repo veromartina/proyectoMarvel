@@ -1,0 +1,13 @@
+/*Algunas propiedades CSS no tienen equivalentes en Tailwind CSS,agrego clases personalizadas*/
+
+.text-bg-clip {
+  background-image: url("./asset/Cómic.jpg");
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-shadow-custom {
+  text-shadow: 0 0 20px #d7fa86, 0 0 50px #e63f08;
+}
