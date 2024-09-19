@@ -103,8 +103,6 @@
                   class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                   <option value="name" class="character-option">A-Z</option>
                   <option value="-name" class="character-option">Z-A</option>
-                  <option value="title" class="comic-option">A-Z</option>
-                  <option value="-title" class="comic-option">Z-A</option>
                   <option value="-onsaleDate" class="comic-option">Más nuevos</option>
                   <option value="onsaleDate" class="comic-option">Más viejos</option>
                 </select>
@@ -116,7 +114,7 @@
         </div>
       </div>
 
-      <div>
+<!--      <div>
         <section class="seccion-comics hidden">
           <img src="" alt="" class="portada-comic w-full h-auto rounded-lg shadow-md" />
           <div class="detalles-comics mt-4">
@@ -137,13 +135,15 @@
             <p class="descripcion-personajes text-gray-600"></p>
           </div>
         </section>
-
+      -->
         <section class="seccion-resultados mt-8">
           <h2 class="titulo-resultados text-xl font-semibold text-gray-700">Resultados</h2>
           <p class="recuento-resultados mt-2 text-gray-600">
             <span class="numero-resultados font-bold">0</span> RESULTADOS
           </p>
-          <div class="resultados grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"></div>
+
+          <div id="contenedor-resultados" class="w-full mt-4 sm:grid sm:gap-4 sm:grid-cols-3 sm:grid-rows-3"></div>
+
           <div class="paginacion mt-6 flex justify-between">
             <button type="button"
               class="primera-pagina boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"

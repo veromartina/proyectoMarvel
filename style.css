@@ -11,3 +11,7 @@
 .text-shadow-custom {
   text-shadow: 0 0 20px #d7fa86, 0 0 50px #e63f08;
 }
+
+.card{
+  width: 100%
+}
