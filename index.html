@@ -41,7 +41,13 @@
         extend: {
           height: {
             alturaHero: "450px",
-          }
+          },
+          maxWidth: {
+            maxWTitHero: '1200px',
+          },
+          fontFamily: {
+            bangers: ['Bangers', 'cursive'],
+      },
         }
       }
     }
@@ -51,8 +57,8 @@
 
 <body class="bg-gray-100 font-sans">
   <header class="h-alturaHero">
-    <div class="tituloHero h-12 flex justify-center w-full max-w-7xl px-2 box-border bg-black">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bold text-bg-clip text-shadow-custom">ADA
+    <div class="tituloHero h-12 flex justify-center w-full max-w-maxWTitHero px-2.5 box-border m-0 mr-auto bg-black">
+      <h1 class="text-5xl tracking-wider sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bangers font-extrabold indent-1.5 text-bg-clip text-shadow-custom">ADA
         COMICS</h1>
 
     </div>
