@@ -1,0 +1,62 @@
+/* ARCHIVO NORMALIZE*/
+
+@import url("./normalize.css");
+*{
+  position: relative;
+}
+
+.text-bg-clip {
+  background-image: url("../asset/Cómic.jpg");
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*.text-shadow-custom {
+  text-shadow: 0 0 20px #f70505, 0 0 50px #9695f4;
+}*/
+
+.cardComics{
+  margin: 0 10px 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 5 - 2* 10px);
+  
+}
+@media(max-width: 640px) {
+  .cardComics {
+      width: calc(100% / 3 - 2* 10px);
+  }
+}
+
+.contenedorImgComics{
+  flex-grow: 1;
+}
+
+img{
+  width: 100%;
+}
+.imgComics{
+  box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+
+.tituloComics{ 
+    height: 64px;
+    margin-top: 25px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.contenedorImgComics:hover {
+  transform: translateY(-20px);
+  transition: 0.2s;
+}
+
+.cardComics:hover{
+  color: red;
+}
+
+

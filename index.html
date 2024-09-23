@@ -16,7 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -47,6 +47,7 @@
           },
           fontFamily: {
             bangers: ['Bangers', 'cursive'],
+            roboto: ["roboto"]
       },
         }
       }
@@ -55,8 +56,8 @@
 
 </head>
 
-<body class="bg-gray-100 font-sans">
-  <header class="h-alturaHero">
+<body class="bg-gray-200 m-0 font-[roboto] font-bold flex flex-col items-center text-[#151515]">
+  <header class="h-alturaHero w-full">
     <div class="tituloHero h-12 flex justify-center w-full max-w-maxWTitHero px-2.5 box-border m-0 mr-auto bg-black">
       <h1 class="text-5xl tracking-wider sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bangers font-extrabold indent-1.5 text-bg-clip text-shadow-custom">ADA
         COMICS</h1>
@@ -148,7 +149,7 @@
             <span class="numero-resultados font-bold">0</span> RESULTADOS
           </p>
 
-          <div id="contenedor-resultados" class="w-full mt-4 sm:grid sm:gap-4 sm:grid-cols-3 sm:grid-rows-3"></div>
+          <div id="contenedor-resultados" class="flex flex-wrap mt-10 min-h-[300px]"></div>
 
           <div class="paginacion mt-6 flex justify-between">
             <button type="button"
