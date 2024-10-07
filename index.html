@@ -16,6 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous">
+      
   <link rel="stylesheet" href="./css/style.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,9 +30,9 @@
           },
         },
       },
-      plugins: [
-        require('tailwindcss-textshadow')
-      ],
+   //   plugins: [
+      //  require('tailwindcss-textshadow')
+  // ],
     }
   </script>
 
@@ -66,21 +67,21 @@
 
     <div class="ImgHero flex flex-wrap w-full h-[400px]">
       <img src="./asset/img1.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img2.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img3.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img4.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img5 (2).jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img6.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img7.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img8.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition-all duration-500 ease-in-out cursor-pointer w-0 md:w-1/7 h-full hover:w-[300px] hover:opacity-100 hover:contrast-120">
     </div>
   </header>
 
@@ -100,14 +101,14 @@
                 <label for="tipo-busqueda" class="block text-sm font-medium text-gray-700">TIPO</label>
                 <select name="tipo-busqueda" id="tipo-busqueda"
                   class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                  <option value="comics">COMICS</option>
-                  <option value="characters">PERSONAJES</option>
+                  <option value="comics" id="busqueda-comics">COMICS</option>
+                  <option value="characters" id="busqueda-personajes">PERSONAJES</option>
                 </select>
               </div>
               <div>
                 <label for="orden-busqueda" class="block text-sm font-medium text-gray-700">ORDEN</label>
-                <select name="orden-busqueda" id="orden-busqueda"
-                  class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                <select name="orden-busqueda" 
+                  class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="orden-busqueda">
                   <option value="name" class="character-option">A-Z</option>
                   <option value="-name" class="character-option">Z-A</option>
                   <option value="-onsaleDate" class="comic-option">Más nuevos</option>
@@ -116,7 +117,7 @@
               </div>
             </div>
             <button type="button"
-              class="search-button mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600">BUSCAR</button>
+              id="btn-buscar" class="search-button mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600">BUSCAR</button>
           </div>
         </div>
       </div>
@@ -149,32 +150,32 @@
             <span class="numero-resultados font-bold">0</span> RESULTADOS
           </p>
 
-          <div id="contenedor-resultados" class="flex flex-wrap mt-10 min-h-[300px]"></div>
+          <div id="contenedor-resultados" class="flex flex-col mt-10"></div>
 
           <div class="paginacion mt-6 flex justify-between">
             <button type="button"
-              class="primera-pagina boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
-              aria-label="Página previa">
+              class="primera-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="primera-pagina"
+              aria-label="Primera pagina">
               <i class="fas fa-angle-double-left" aria-hidden="true"></i>
             </button>
             <button type="button"
-              class="pagina-anterior boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+              class="pagina-anterior bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="pagina-anterior"
               aria-label="Página Anterior">
               <i class="fas fa-angle-left" aria-hidden="true"></i>
             </button>
             <button type="button"
-              class="pagina-siguiente boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
-              aria-label="Siguiente Página">
+              class="pagina-siguiente bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="pagina-siguiente"
+              aria-label="Pagina siguiente">
               <i class="fas fa-angle-right" aria-hidden="true"></i>
             </button>
             <button type="button"
-              class="ultima-pagina boton-paginacion bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+              class="ultima-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="ultima-pagina"
               aria-label="Última página">
               <i class="fas fa-angle-double-right" aria-hidden="true"></i>
             </button>
           </div>
         </section>
-        <div class="contenedor-cagador hidden mt-6 flex justify-center">
+        <div class="contenedor-cargador hidden mt-6 flex justify-center">
           <div class="loader"></div>
         </div>
       </div>

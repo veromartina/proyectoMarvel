@@ -18,34 +18,39 @@
 }*/
 
 .cardComics{
+  width: 300px;
+  height: 500px;
   margin: 0 10px 40px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: calc(100% / 5 - 2* 10px);
+ 
   
 }
+/*
 @media(max-width: 640px) {
   .cardComics {
       width: calc(100% / 3 - 2* 10px);
   }
-}
+}*/
 
 .contenedorImgComics{
-  flex-grow: 1;
+width: 100%;
+height: 100%;
 }
 
-img{
-  width: 100%;
-}
 .imgComics{
+  width: 100%;
+  height: 100%;
   box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
+  object-fit: cover;
+ 
 }
 
 .tituloComics{ 
     height: 64px;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 14px;
     font-size: 14px;
 }
