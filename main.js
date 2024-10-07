@@ -12,44 +12,50 @@ const contenedorResultados = document.getElementById("contenedor-resultados"); /
 
 const tipoBusqueda = document.getElementById("tipo-busqueda"); //select tipo (comics/perso)
 
-const  ordenBusqueda = document.getElementById("orden-busqueda") //select orden
+const ordenBusqueda = document.getElementById("orden-busqueda") //select orden
+
+const numeroResultados = document.getElementById("numero-resultados"); // obtener resultados totales 
+
 
 //TRAER TARJETAS COMICS/PERSONAJES
 
 function traerTarjetas() {
 
   if (tipoBusqueda.value === "comics") {
+  
     fetch(urlApi + urlComics + paramAutenticacion)
       .then((response) => response.json())
 
       .then((data) => {
 
         const comics = data.data.results;
-        
-        crearTarjetasComics(comics);
-      }) // Llama a la función para crear tarjetas comics
+        crearTarjetasComics(comics);// Llama a la función para crear tarjetas comics
+        numeroResultados.textContent = `${data.data.total} resultados`;
+      })
 
       .catch((error) => console.error(error));
 
   } else (tipoBusqueda.value === "characters")
-     //ordenBusqueda.value.innerHTML = "A-Z";
-    // ordenBusqueda.value.innerHTML= "Z-A";
+  ordenBusqueda.innerHTML = ''; // Limpiar resultados previos
+  ordenBusqueda.innerHTML = `
+        <option value="name">A-Z</option>
+        <option value="-name">Z-A</option>`;
 
-    fetch(urlApi + urlPersonajes + paramAutenticacion)
-      .then((response) => response.json())
-    
+  fetch(urlApi + urlPersonajes + paramAutenticacion)
+    .then((response) => response.json())
 
-      .then((data) => {
+
+    .then((data) => {
       const personajes = data.data.results;
-      crearTarjetasPersonajes(personajes);
+      crearTarjetasPersonajes(personajes);// Llama a la función para crear tarjetas personajes
+      numeroResultados.textContent = `${data.data.total} resultados`;
       //console.log(personajes)
-      }) // Llama a la función para crear tarjetas personajes
+    })
 
-      .catch((error) => console.error(error));
-
-};
-
+    .catch((error) => console.error(error));
+}
 traerTarjetas();
+
 
 //CREAR LAS TARJETAS  COMICS
 function crearTarjetasComics(tarjetas) {
@@ -118,3 +124,22 @@ btnBuscar.addEventListener("click", () => {
 });
 
 
+/*funcion filtro ordenar
+
+
+function llenarOpciones() {
+  ordenBusqueda.innerHTML = `
+    <option value="title">A-Z</option>
+    <option value="-title">Z-A</option>
+    <option value="newest">Más nuevos</option>
+    <option value="oldest">Más viejos</option>
+  `;
+}
+
+
+function llenarOpcionesCharacters() {
+  ordenBusqueda.innerHTML = `
+    <option value="name">A-Z</option>
+    <option value="-name">Z-A</option>
+  `;
+}   */
