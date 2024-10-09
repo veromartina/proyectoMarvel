@@ -11,12 +11,10 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous">
-      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous">
+
   <link rel="stylesheet" href="./css/style.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,9 +28,9 @@
           },
         },
       },
-   //   plugins: [
+      //   plugins: [
       //  require('tailwindcss-textshadow')
-  // ],
+      // ],
     }
   </script>
 
@@ -49,7 +47,7 @@
           fontFamily: {
             bangers: ['Bangers', 'cursive'],
             roboto: ["roboto"]
-      },
+          },
         }
       }
     }
@@ -60,7 +58,9 @@
 <body class="bg-gray-200 m-0 font-[roboto] font-bold flex flex-col items-center text-[#151515]">
   <header class="h-alturaHero w-full">
     <div class="tituloHero h-12 flex justify-center w-full max-w-maxWTitHero px-2.5 box-border m-0 mr-auto bg-black">
-      <h1 class="text-5xl tracking-wider sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bangers font-extrabold indent-1.5 text-bg-clip text-shadow-custom">ADA
+      <h1
+        class="text-5xl tracking-wider sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bangers font-extrabold indent-1.5 text-bg-clip text-shadow-custom">
+        ADA
         COMICS</h1>
 
     </div>
@@ -107,23 +107,30 @@
               </div>
               <div>
                 <label for="orden-busqueda" class="block text-sm font-medium text-gray-700">ORDEN</label>
-                <select name="orden-busqueda" 
-                  class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="orden-busqueda">
-                  <!-- *** Las opciones se llenarán dinámicamente *** -->
-                 <option value="title" class="character-option">A-Z</option>
-                  <option value="-title" class="character-option">Z-A</option>
-                  <option value="-focDate" class="comic-option">Más nuevos</option>
-                  <option value="focDatet" class="comic-option">Más viejos</option>  
+
+                <select name="orden-busqueda-comics"
+                  class="mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  id="orden-busqueda-comics">
+                  <option value="title">A-Z</option>
+                  <option value="-title">Z-A</option>
+                  <option value="-focDate">Más nuevos</option>
+                  <option value="focDate">Más viejos</option>
                 </select>
+
+                <select name="orden-busqueda-personajes" class= "hidden mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="orden-busqueda-personajes">
+                  <option value="name">A-Z</option>
+                  <option value="-name">Z-A</option>
+                </select>
+                
               </div>
             </div>
-            <button type="button"
-              id="btn-buscar" class="search-button mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600">BUSCAR</button>
+            <button type="button" id="btn-buscar"
+              class="search-button mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600">BUSCAR</button>
           </div>
         </div>
       </div>
 
-<!--      <div>
+      <!--      <div>
         <section class="seccion-comics hidden">
           <img src="" alt="" class="portada-comic w-full h-auto rounded-lg shadow-md" />
           <div class="detalles-comics mt-4">
@@ -145,39 +152,39 @@
           </div>
         </section>
       -->
-        <section class="seccion-resultados mt-8">
-          <h2 class="titulo-resultados text-xl font-semibold text-gray-700">Resultados</h2>
-          <p class="mt-2 text-gray-600" id="numero-resultados"></p>
+      <section class="seccion-resultados mt-8">
+        <h2 class="titulo-resultados text-xl font-semibold text-gray-700">Resultados</h2>
+        <p class="mt-2 text-gray-600" id="numero-resultados"></p>
 
-          <div id="contenedor-resultados" class="flex flex-col mt-10"></div>
+        <div id="contenedor-resultados" class="flex flex-col mt-10"></div>
 
-          <div class="paginacion mt-6 flex justify-between">
-            <button type="button"
-              class="primera-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="primera-pagina"
-              aria-label="Primera pagina">
-              <i class="fas fa-angle-double-left" aria-hidden="true"></i>
-            </button>
-            <button type="button"
-              class="pagina-anterior bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="pagina-anterior"
-              aria-label="Página Anterior">
-              <i class="fas fa-angle-left" aria-hidden="true"></i>
-            </button>
-            <button type="button"
-              class="pagina-siguiente bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="pagina-siguiente"
-              aria-label="Pagina siguiente">
-              <i class="fas fa-angle-right" aria-hidden="true"></i>
-            </button>
-            <button type="button"
-              class="ultima-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600" id="ultima-pagina"
-              aria-label="Última página">
-              <i class="fas fa-angle-double-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </section>
-        <div class="contenedor-cargador hidden mt-6 flex justify-center">
-          <div class="loader"></div>
+        <div class="paginacion mt-6 flex justify-between">
+          <button type="button"
+            class="primera-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+            id="primera-pagina" aria-label="Primera pagina">
+            <i class="fas fa-angle-double-left" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="pagina-anterior bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+            id="pagina-anterior" aria-label="Página Anterior">
+            <i class="fas fa-angle-left" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="pagina-siguiente bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+            id="pagina-siguiente" aria-label="Pagina siguiente">
+            <i class="fas fa-angle-right" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="ultima-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+            id="ultima-pagina" aria-label="Última página">
+            <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+          </button>
         </div>
-      </div>
+      </section>
+     <!-- <div class="contenedor-cargador hidden mt-6 flex justify-center">
+        <div class="loader"></div>
+      </div>  -->
+    </div>
     </div>
   </main>
   <script src="./main.js"></script>
