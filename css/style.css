@@ -64,6 +64,9 @@ height: 100%;
   color: red;
 }
 
+.boton-desabilitado {
+  pointer-events: none; /* Evita que se pueda interactuar */
+}
 
 .hidden{
   display: none;
