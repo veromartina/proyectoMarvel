@@ -17,7 +17,7 @@
   text-shadow: 0 0 20px #f70505, 0 0 50px #9695f4;
 }*/
 
-.cardComics{
+.tarjetascreadas{
   width: 300px;
   height: 500px;
   margin: 0 10px 40px;
@@ -34,12 +34,12 @@
   }
 }*/
 
-.contenedorImgComics{
+.contenedorImg{
 width: 100%;
 height: 100%;
 }
 
-.imgComics{
+.imgTarj{
   width: 100%;
   height: 100%;
   box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4);
@@ -48,19 +48,19 @@ height: 100%;
  
 }
 
-.tituloComics{ 
+.tituloH3{ 
     height: 64px;
     margin-top: 20px;
     margin-bottom: 14px;
     font-size: 14px;
 }
 
-.contenedorImgComics:hover {
+.contenedorImg:hover {
   transform: translateY(-20px);
   transition: 0.2s;
 }
 
-.cardComics:hover{
+.tituloH3:hover{
   color: red;
 }
 
