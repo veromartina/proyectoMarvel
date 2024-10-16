@@ -28,9 +28,6 @@
           },
         },
       },
-      //   plugins: [
-      //  require('tailwindcss-textshadow')
-      // ],
     }
   </script>
 
@@ -46,7 +43,7 @@
           },
           fontFamily: {
             bangers: ['Bangers', 'cursive'],
-            roboto: ["roboto"]
+            roboto: ['Roboto', 'sans-serif']
           },
         }
       }
@@ -117,11 +114,13 @@
                   <option value="focDate">Más viejos</option>
                 </select>
 
-                <select name="orden-busqueda-personajes" class= "hidden mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="orden-busqueda-personajes">
+                <select name="orden-busqueda-personajes"
+                  class="hidden mt-1 block w-full p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  id="orden-busqueda-personajes">
                   <option value="name">A-Z</option>
                   <option value="-name">Z-A</option>
                 </select>
-                
+
               </div>
             </div>
             <button type="button" id="btn-buscar"
@@ -130,70 +129,51 @@
         </div>
       </div>
 
-      <!--
-        <section class="seccion-comics hidden">
-          <img src="" alt="" class="portada-comic w-full h-auto rounded-lg shadow-md" />
-          <div class="detalles-comics mt-4">
-            <h2 class="titulo-comics text-2xl font-bold text-gray-900"></h2>
-            <h3 class="mt-2 text-lg font-semibold text-gray-700">Publicado:</h3>
-            <p class="publicado-comics text-gray-600"></p>
-            <h3 class="mt-2 text-lg font-semibold text-gray-700">Guionistas:</h3>
-            <p class="escritor-comics text-gray-600"></p>
-            <h3 class="mt-2 text-lg font-semibold text-gray-700">Descripción:</h3>
-            <p class="comic-descripcion text-gray-600"></p>
-          
-        </section>
-
-        <section class="seccion-personajes hidden">
-          <img src="" alt="" class="imagen-personajes w-full h-auto rounded-lg shadow-md" />
-          <div class="detalles-personajes mt-4">
-            <h2 class="nombre-personajes text-2xl font-bold text-gray-900"></h2>
-            <p class="descripcion-personajes text-gray-600"></p>
-          </div>
-        </section>
-      -->
-      <section class="seccion-resultados mt-8">
-        <h2 class="titulo-resultados text-xl font-semibold text-gray-700">Resultados</h2>
-        <p class="mt-2 text-gray-600" id="numero-resultados"></p>
+      <section class="seccion-resultados mt-20 mr-2.5 mb-12 ml-2.5">
+        <div id="totales">
+          <h2 class="titulo-resultados text-xl font-semibold text-gray-700">Resultados</h2>
+          <p class="mt-2 text-gray-600" id="numero-resultados"></p>
+        </div>
 
         <div id="contenedor-resultados" class="flex flex-col mt-10"></div>
+        <div id="contenedor-detalles" class="hidden flex-col mt-10"></div>
 
-        <div class="paginacion mt-6 flex justify-between"></div>
-          <button type="button"
-            class="primera-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
-            id="primera-pagina" aria-label="Primera pagina">
-            <i class="fas fa-angle-double-left" aria-hidden="true"></i>
-          </button>
-          <button type="button"
-            class="pagina-anterior bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
-            id="pagina-anterior" aria-label="Página Anterior">
-            <i class="fas fa-angle-left" aria-hidden="true"></i>
-          </button>
-          <button type="button"
-            class="pagina-siguiente bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
-            id="pagina-siguiente" aria-label="Pagina siguiente">
-            <i class="fas fa-angle-right" aria-hidden="true"></i>
-          </button>
-          <button type="button"
-            class="ultima-pagina bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
-            id="ultima-pagina" aria-label="Última página">
-            <i class="fas fa-angle-double-right" aria-hidden="true"></i>
-          </button>
-        </div>
-      </section>
-      <section id="contenedor-detalles" class="hidden flex-col mt-10"></section>
+        <div class="mt-6 flex justify-center gap-1">
+        <button type="button"
+          class="btnPag bg-blue-500 text-white py-[5px] px-[10px] rounded-md shadow-sm hover:bg-blue-600"
+          id="primera-pagina" aria-label="Primera pagina">
+          <i class="fas fa-angle-double-left" aria-hidden="true"></i>
+        </button>
+        <button type="button"
+          class="btnPag bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+          id="pagina-anterior" aria-label="Página Anterior">
+          <i class="fas fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button type="button"
+          class="btnPag bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+          id="pagina-siguiente" aria-label="Pagina siguiente">
+          <i class="fas fa-angle-right" aria-hidden="true"></i>
+        </button>
+        <button type="button"
+          class="btnPag bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600"
+          id="ultima-pagina" aria-label="Última página">
+          <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    </section>
 
-     <!-- <div class="contenedor-cargador hidden mt-6 flex justify-center">
+    <!-- <div class="contenedor-cargador hidden mt-6 flex justify-center">
         <div class="loader"></div>
       </div>  -->
     </div>
     </div>
-  </main>
+  </main> 
   <script src="./main.js"></script>
-  <footer class="bg-white shadow mt-6">
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
-      <div class="text-gray-700">Realizado con ❤️ por Veronica S. Martina</div>
-    </div>
+  <footer class="w-full py-7.5 pt-[30px] pb-[40px] bg-[#020202] text-white mt-30 text-center">
+
+      <div class="w-full max-w-[1200px] mx-auto px-2.5 box-border">Realizado con ❤️ por Veronica S. Martina</div>
+    
   </footer>
 </body>
 
