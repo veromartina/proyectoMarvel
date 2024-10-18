@@ -1,6 +1,7 @@
 
 *{
   position: relative;
+  scroll-behavior: smooth;
 }
 
 .text-bg-clip {
