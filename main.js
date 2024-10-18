@@ -2,7 +2,7 @@ const publicKey = "99d7c07d74c026e85a23c1dbdb1454bd";
 const ts = "marvel";
 const hash = "b1da2d2133efcaee66a056c03b5b33ce";
 
-const urlBase = `https://gateway.marvel.com/v1/public/`;
+const urlBase = `http://gateway.marvel.com/v1/public/`;
 const paramAutenticacion = `?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
 
 const urlComics = `${urlBase}comics/`;
@@ -43,9 +43,14 @@ const mostrarResultados = (
 ) => {
   let valorInput = contenedorInput
     ? tipo === "comics"
-      ? `&titleStartsWith=${contenedorInput}`.replace("http://","https://")
-      : `&nameStartsWith=${contenedorInput}`.replace("http://","https://")
+      ? `&titleStartsWith=${contenedorInput}`
+      : `&nameStartsWith=${contenedorInput}`
     : "";
+
+//funcion para convertir http a https
+const convertirHttpAHttps = (url)=>{
+return  url.replace("http://", "https://");
+};
 
   fetch(
     `${urlBase}${tipo}${paramAutenticacion}&orderBy=${orden}${valorInput}&offset=${paginaActual * resultadosPorPagina
@@ -86,7 +91,8 @@ function crearTarjetas(tarjetas, tipo) {
     titulo.style.marginTop = "10px";
     const nuevaImagen = document.createElement("img");
     nuevaImagen.className = "imgTarj";
-    nuevaImagen.src = `${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
+    const urlImagen = `${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
+    nuevaImagen.src = convertirHttpAHttps(urlImagen);
     conteImg.appendChild(nuevaImagen);
 
     if (tipo === "comics") {
@@ -101,6 +107,7 @@ function crearTarjetas(tarjetas, tipo) {
       nuevaImagen.className = "imgTarjPersonaje";
       divH3.className = "divH3Personajes";
       titulo.className = "tituloH3Personajes";
+      
     }
     //click en las tarjetas
     nuevaTarjeta.addEventListener("click", () => {
