@@ -48,8 +48,7 @@ const mostrarResultados = (
     : "";
 
   fetch(
-    `${urlBase}${tipo}${paramAutenticacion}&orderBy=${orden}${valorInput}&offset=${
-      paginaActual * resultadosPorPagina
+    `${urlBase}${tipo}${paramAutenticacion}&orderBy=${orden}${valorInput}&offset=${paginaActual * resultadosPorPagina
     }`
   )
     .then((res) => {
@@ -276,29 +275,26 @@ const InfoComics = (comicId) => {
           contenedorDetalles.innerHTML = `
                     <button id="botonVolver">Volver a la búsqueda</button> 
                             <h2 class="tituloH2">${comic.title}</h2>
-                            <img class="imgTarj" src="${imagenUrl}" alt="${
-            comic.title
-          }">
+                            <img class="imgTarj md:w-[200px] h-[300px]" src="${imagenUrl}" alt="${comic.title
+            }">
                             <h3 class="subtitulos">Publicado:</h3>
                             <p class="mt-2 text-gray-600"> ${dia}/${mes}/${año}</p>
                             <h3 class="subtitulos">Guionistas:</h3>
                             <p class="mt-2 text-gray-600"> ${comic.creators.items
-                              .map((item) => item.name)
-                              .join(", ")}</p>
+              .map((item) => item.name)
+              .join(", ")}</p>
                             <h3 class="subtitulos">Descripción:</h3>
-                            <p class="mt-2 text-gray-600">${
-                              comic.description
-                            }</p>
-                            <h2 class="tituloH2">Cantidad de personajes:${
-                              comic.characters.items.length
-                            }</h2>`;
+                            <p class="mt-2 text-gray-600">${comic.description
+            }</p>
+                            <h2 class="tituloH2">Cantidad de personajes:${comic.characters.items.length
+            }</h2>`;
           document
             .getElementById("botonVolver")
             .addEventListener("click", () => {
               contenedorDetalles.classList.add("hidden");
               contenedorResultados.classList.remove("hidden");
               totales.classList.remove("hidden");
-              mostrarResultados();
+             
             });
 
           const personajes = comic.characters.items;
@@ -348,23 +344,23 @@ const InfoPersonajes = (characterId) => {
 
         contenedorResultados.classList.add("hidden");
         contenedorDetalles.classList.remove("hidden");
+        totales.classList.add("hidden");
         contenedorDetalles.innerHTML = `
-                    <div>
-                        <img src="${imagenUrl}" alt="${character.name}">
-                        <h2>${character.name}</h2>
-                        <h2>Cómics</h2>
+        <button id="botonVolver">Volver a la búsqueda</button> 
+        <h2 class="tituloH2">${character.name}</h2>
+                        <img class="imgTarj md:w-[200px] h-[300px]"  src="${imagenUrl}" alt="${character.name}">
+                        <h3 class="subtitulos">Cómics</h3>           
+                        <p class="mt-2 text-gray-600"> ${character.comics.items
+            .map((item) => item.name)
+            .join(", ")}</p>
                         
-                        <p>Cómics: ${character.comics.items
-                          .map((item) => item.name)
-                          .join(", ")}</p>
-                        
-                        <button id="botonVolver">Volver a la búsqueda</button>
-                    </div>
                 `;
 
         document.getElementById("botonVolver").addEventListener("click", () => {
-          contenedorDetalles.innerHTML = "";
-          mostrarResultados();
+          contenedorDetalles.classList.add("hidden");
+          contenedorResultados.classList.remove("hidden");
+          totales.classList.remove("hidden");
+         
         });
       } else {
         console.error("No se encontró el personaje con el ID proporcionado.");
