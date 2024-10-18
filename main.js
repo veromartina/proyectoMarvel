@@ -86,15 +86,15 @@ function crearTarjetas(tarjetas, tipo) {
     titulo.style.marginTop = "10px";
     const nuevaImagen = document.createElement("img");
     nuevaImagen.className = "imgTarj";
-    //const urlImagen = `${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
     nuevaImagen.src =`${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
+    nuevaImagen.loading = "lazy";
     conteImg.appendChild(nuevaImagen);
 
     if (tipo === "comics") {
       titulo.textContent = `${tarj.title}`;
       nuevaTarjeta.className = "tarjetasCreadasComics";
       titulo.className = "tituloH3";
-      //  conteImg.className = "";
+    
     } else if (tipo === "characters") {
       titulo.textContent = `${tarj.name}`;
       nuevaTarjeta.className = "tarjetasCreadasPersonajes";
