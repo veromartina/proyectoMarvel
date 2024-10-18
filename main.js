@@ -43,8 +43,8 @@ const mostrarResultados = (
 ) => {
   let valorInput = contenedorInput
     ? tipo === "comics"
-      ? `&titleStartsWith=${contenedorInput}`
-      : `&nameStartsWith=${contenedorInput}`
+      ? `&titleStartsWith=${contenedorInput}`.replace("http://","https://")
+      : `&nameStartsWith=${contenedorInput}`.replace("http://","https://")
     : "";
 
   fetch(
