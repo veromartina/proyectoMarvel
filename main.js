@@ -2,7 +2,7 @@ const publicKey = "99d7c07d74c026e85a23c1dbdb1454bd";
 const ts = "marvel";
 const hash = "b1da2d2133efcaee66a056c03b5b33ce";
 
-const urlBase = `http://gateway.marvel.com/v1/public/`;
+const urlBase = `https://gateway.marvel.com/v1/public/`;
 const paramAutenticacion = `?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
 
 const urlComics = `${urlBase}comics/`;
