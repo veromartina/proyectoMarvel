@@ -43,14 +43,14 @@ const mostrarResultados = (
 ) => {
   let valorInput = contenedorInput
     ? tipo === "comics"
-      ? `&titleStartsWith=${contenedorInput}`.replace("http://","https://")
-      : `&nameStartsWith=${contenedorInput}`.replace("http://","https://")
+      ? `&titleStartsWith=${contenedorInput}`
+      : `&nameStartsWith=${contenedorInput}`
     : "";
 
-  fetch(
-    `${urlBase}${tipo}${paramAutenticacion}&orderBy=${orden}${valorInput}&offset=${paginaActual * resultadosPorPagina
-    }`
-  )
+
+    const urlConHttps = urlBase.startsWith("https://") ? urlBase : urlBase.replace("http://", "https://");
+fetch(urlConHttps + tipo + paramAutenticacion + `&orderBy=${orden}${valorInput}&offset=${paginaActual * resultadosPorPagina}`)
+  
     .then((res) => {
       if (!res.ok) throw new Error("La respuesta de la red no fue correcta");
       return res.json();
@@ -86,7 +86,8 @@ function crearTarjetas(tarjetas, tipo) {
     titulo.style.marginTop = "10px";
     const nuevaImagen = document.createElement("img");
     nuevaImagen.className = "imgTarj";
-    nuevaImagen.src = `${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
+    //const urlImagen = `${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
+    nuevaImagen.src =`${tarj.thumbnail.path}.${tarj.thumbnail.extension}`;
     conteImg.appendChild(nuevaImagen);
 
     if (tipo === "comics") {
