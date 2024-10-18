@@ -53,9 +53,9 @@
 
 </head>
 
-<body class="bg-gray-200 m-0 font-[roboto] font-bold flex flex-col items-center text-[#151515]">
+<body class="bg-gray-200 m-0 font-[roboto] font-bold items-center text-[#151515]">
   <header class="h-alturaHero w-full mx-0">
-    <div class="tituloHero h-12 flex justify-center w-full px-2.5 box-border m-0 bg-black">
+    <div class="tituloHero h-12 flex justify-center w-full px-2.5 box-border m-0 bg-black md:h-20 md:items-center">
       <h1
         class="text-5xl tracking-wider sm:text-5xl md:text-6xl lg:text-4xl xl:text-8xl font-bangers font-extrabold indent-1.5 text-bg-clip text-shadow-custom">
         ADA
@@ -64,28 +64,28 @@
 
     <div class="contenedor-Img flex flex-wrap h-[400px] w-full">
       <img src="./asset/img1.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/4 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img2.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img3.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img4.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img5.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img6.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img7.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img8.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
       <img src="./asset/img9.jpg" alt="imagen"
-        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-1/7 h-full hover:w-[200px] hover:opacity-100 hover:contrast-120">
+        class="flex-grow object-cover opacity-80 transition duration-500 ease-in-out hover:cursor-crosshair w-0 md:w-20 h-full hover:w-[200px] md:hover:w-[300px] hover:opacity-100 hover:contrast-120">
     </div>
   </header>
 
   <main class="w-full sm:px-6 lg:px-8">
-    <div class="bg-white shadow sm:rounded-lg p-6">
+    <div class="bg-white shadow sm:rounded-lg p-6 mt-9">
       <div class="mb-6">
         <h2 id="tituloH2" class="text-xl font-semibold text-gray-700">Búsqueda</h2>
         <div class="contenedor mt-4">
@@ -137,10 +137,10 @@
           <p class="mt-2 text-gray-600" id="numero-resultados"></p>
         </div>
 
-        <div id="contenedor-resultados" class="flex flex-col mt-10"></div>
+        <div id="contenedor-resultados" class="flex flex-wrap justify-center"></div>
         <div id="contenedor-detalles" class="hidden flex-col mt-10"></div>
 
-        <div class="mt-6 flex justify-center gap-1">
+        <div class="flex justify-center gap-1 pt-7 mt-16">
           <button type="button"
             class="btnPag bg-blue-500 text-white py-[5px] px-[10px] rounded-md shadow-sm hover:bg-blue-600"
             id="primera-pagina" aria-label="Primera pagina">
